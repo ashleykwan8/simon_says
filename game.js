@@ -38,11 +38,15 @@ $(".btn").click(function(){
     checkAnswer(userGamePattern.length-1)
 });
 
+
 // check user's answers
 function checkAnswer(currentLevel) {
     if (userGamePattern[currentLevel] == gamePattern[currentLevel]){
         console.log("Success!");
         if(userGamePattern.length== gamePattern.length){
+            // setTimeout(function(){
+            //     playSequence();
+            // }, 2000);
             setTimeout(function(){
                 nextSequence();
             }, 1000);
@@ -58,6 +62,13 @@ function checkAnswer(currentLevel) {
         startOver();
     }
 }
+
+// function playSequence(){
+//     for(let i = 0; i < gamePattern.length;i++){
+//         $("#" + gamePattern[i]).fadeIn(100).fadeOut(100).fadeIn(100);
+//         playSound(gamePattern[i]);
+//     }
+// }
 
 // function to run the randomize sequence of colors 
 function nextSequence() {
